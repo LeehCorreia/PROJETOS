@@ -8,7 +8,7 @@ def find_next_empty(puzzle):
     return None, None
 
 def is_valid(puzzle, guess, row, col):
-    row_vals = puzzle(row)
+    row_vals = puzzle[row]
     if guess in row_vals:
         return False
     
@@ -26,6 +26,7 @@ def is_valid(puzzle, guess, row, col):
     
     return True
 
+#TESTE
 
 def solve_sudoku(puzzle):
     row, col = find_next_empty(puzzle)
@@ -43,18 +44,28 @@ def solve_sudoku(puzzle):
     
     return False
 
-# if __name__ == '__main__':
-#     example = [
-#         [3, 9, -1, -1, 5, -1, -1, -1, -1],
-#         [-1, -1, -1, 2, -1, -1, -1, -1, 5],
-#         [-1, -1, -1, 7, 1, 9, -1, 8, -1], 
-#         [-1, 5, -1, -1, 6, 8, -1, -1, -1],
-#         [2, -1, 6, -1, -1, 3, -1, -1, -1],
-#         [-1, -1, -1, -1, -1, -1, -1, -1, 4],
-#         [5, -1, -1, -1, -1, -1, -1, -1, -1],
-#         [6, 7, -1, 1, -1, 5, -1, 4, -1],
-#         [1, -1, 9, -1, -1, -1, 2, -1, -1]
-#     ]
+def print_puzzle(puzzle):
+    for row in puzzle:
+        print(" ".join(str(num) if num != -1 else "." for num in row))
 
-# print(solve_sudoku(example))
-# print(example)
+puzzle = [
+    [5, 3, -1, -1, 7, -1, -1, -1, -1],
+    [6, -1, -1, 1, 9, 5, -1, -1, -1],
+    [-1, 9, 8, -1, -1, -1, -1, 6, -1],
+    [8, -1, -1, -1, 6, -1, -1, -1, 3],
+    [4, -1, -1, 8, -1, 3, -1, -1, 1],
+    [7, -1, -1, -1, 2, -1, -1, -1, 6],
+    [-1, 6, -1, -1, -1, -1, 2, 8, -1],
+    [-1, -1, -1, 4, 1, 9, -1, -1, 5],
+    [-1, -1, -1, -1, 8, -1, -1, 7, 9]
+]
+
+print("Puzzle original:")
+print_puzzle(puzzle)
+
+if solve_sudoku(puzzle):
+    print("\nPuzzle resolvido:")
+    print_puzzle(puzzle)
+else:
+    print("Não foi possível resolver o Sudoku.")
+
