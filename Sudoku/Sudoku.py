@@ -26,7 +26,6 @@ def is_valid(puzzle, guess, row, col):
     
     return True
 
-#TESTE
 
 def solve_sudoku(puzzle):
     row, col = find_next_empty(puzzle)
@@ -43,6 +42,8 @@ def solve_sudoku(puzzle):
         puzzle[row][col] = -1
     
     return False
+
+#TESTE
 
 def print_puzzle(puzzle):
     for row in puzzle:
