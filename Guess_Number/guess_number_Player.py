@@ -1,3 +1,5 @@
+#Think in one number for the computer to try to guess (1, 20).
+
 import random
 
 def guess(x):
@@ -9,7 +11,7 @@ def guess(x):
             guess = random.randint(low, high)
         else:
             guess = low
-        feedback = input(f"Is {guess} too high (H), too low (L), or correct (C)?").lower()
+        feedback = input(f"Is {guess} too high (H), too low (L), or correct (C)?: ").lower()
         if feedback == 'h':
             high = guess - 1
         elif feedback == 'l':
