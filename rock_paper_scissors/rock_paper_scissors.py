@@ -3,8 +3,13 @@ import random
 def game():
     player = input("'r' for rock, 'p' for paper, 's' for scissors: ").lower()
     computer = random.choice(['r', 'p', 's'])
-    print(computer)
-
+        if computer == 'r':
+            print("Computer used ROCK!")
+        elif computer == 'p':
+            print("Computer used PAPER!")
+        else:
+            print('Computer used SCISSORS!')
+    
     if player == computer:
         return 'It\'s a tie!'
     
