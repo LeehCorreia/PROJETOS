@@ -1,3 +1,4 @@
+import math
 import time
 from player import HumanPlayer, RandomComputerPlayer
 
@@ -94,6 +95,6 @@ def play(game, x_player, o_player, print_game=True):
 
 if __name__ == '__main__':
     x_player = HumanPlayer('X')
-    o_player = RandomComputerPLayer('O')
+    o_player = RandomComputerPlayer('O')
     t = TicTacToe()
     play(t, x_player, o_player, print_game=True)
